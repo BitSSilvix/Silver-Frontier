@@ -1,0 +1,165 @@
+/* Подключаем твой любимый шрифт Panchang для будущих заголовков */
+@import url('https://api.fontshare.com/v2/css?f[]=panchang@700,800,900&display=swap');
+
+/* Сбрасываем стандартные отступы браузера */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Clash Display", Roboto, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Запрещаем прокрутку самого окна приложения */
+  background-color: #3d3d3d; /* Базовый цвет белой темы */
+  color: #1A1A1A;
+}
+
+/* =======================================
+   КОНТЕЙНЕРЫ
+======================================= */
+.browser-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.app-title {
+  font-family: 'Panchang', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #7ce1ec; /* Бирюзовый цвет для названия приложения */
+  user-select: none; /* Запрещаем выделение текста */
+}
+
+.workspace {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 38px);
+}
+
+/* =======================================
+   ТАЙТЛБАР И УПРАВЛЕНИЕ ОКНОМ
+======================================= */
+.titlebar {
+  height: 38px;
+  background: #2e2e2e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Распределяем элементы по краям */
+  padding: 0 8px 0 16px;
+  border-bottom: 1px solid #00E5FF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  user-select: none;
+  -webkit-app-region: drag; /* Делаем весь тайтлбар перетаскиваемым */
+}
+
+.window-controls,
+.omnibox {
+  -webkit-app-region: no-drag;
+}
+
+/* Кнопки окна (серебристый стиль) */
+.window-controls {
+  display: flex;
+  gap: 4px;
+  z-index: 10; /* Чтобы кнопки всегда нажимались */
+}
+
+.window-controls button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: #6B7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.15s ease;
+}
+
+.window-controls button:hover {
+  background: linear-gradient(180deg, #2e2e2e 0%, #015963 50%, #00b9ce 100%);
+  color: #1A1A1A;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #757575;
+}
+
+/* =======================================
+   АДРЕСНАЯ СТРОКА (OMNIBOX)
+======================================= */
+.omnibox {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto; /* Центрируем строку поиска */
+  height: 28px;
+  background: #3a3a3a;
+  border-radius: 14px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* Бирюзовый неоновый фокус! */
+.omnibox:focus-within {
+  background: #5e5d5d;
+  border-color: #00E5FF;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2);
+}
+
+#url-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: #e4e4e4;
+  font-family: inherit;
+}
+
+#btn-go {
+  background: transparent;
+  border: none;
+  font-family: 'Panchang', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: #00E5FF; /* Бирюзовая кнопка GO */
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 4px;
+  transition: color 0.15s;
+}
+
+#btn-go:hover {
+  color: #00B8D4; /* Темная бирюза при наведении */
+}
+
+/* =======================================
+   РАБОЧИЕ ЗОНЫ
+======================================= */
+#sidebar {
+  width: 48px; /* Пока узкая полоска для вкладок */
+  background: #2e2e2e;
+  border-right: 1px solid #00E5FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+#viewport-anchor {
+  flex: 1;
+  height: 100%;
+  background-color: #121212; /* Графитовый фон якоря (будет скрыт сайтом) */
+}

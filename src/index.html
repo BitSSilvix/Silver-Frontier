@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silver Fr0ntier</title>
+  <!-- Подключаем наш мощный CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Подключаем JS -->
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="browser-container">
+    <!-- Кастомный Тайтлбар (верхняя панель) -->
+    <header class="titlebar" data-tauri-drag-region>
+      <h1 class="app-title">Frontier</h1>
+      <!-- Центральная адресная строка -->
+      <div class="omnibox">
+        <input type="text" id="url-input" placeholder="Введите адрес или запрос в Google..." value="google.com" autocomplete="off" />
+        <button id="btn-go">GO</button>
+      </div>
+      <!-- Кнопки управления окном (справа) -->
+      <div class="window-controls">
+        <button id="win-min">−</button>
+        <button id="win-max">◻</button>
+        <button id="win-close">✕</button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <!-- Боковая панель (задел под вертикальные вкладки) -->
+      <aside id="sidebar"></aside>
+      <main id="viewport-anchor"></main>
+    </div>
+  </div>
+</body>
+</html>
