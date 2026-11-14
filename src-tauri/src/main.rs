@@ -24,9 +24,10 @@ async fn create_web_view(
     width: f64,
     height: f64,
 ) -> Result<(), String> {
-    let window = app
+    let webview_window = app
         .get_webview_window("main")
         .ok_or("Main window not found")?;
+    let window = webview_window.as_ref().window();
 
     if let Some(existing_view) = app.get_webview("content_view") {
         existing_view
@@ -78,7 +79,6 @@ fn win_close(app: AppHandle) {
 
 fn main() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_opener::init())
         .setup(|app| {
             if let Some(main_window) = app.get_webview_window("main") {
                 let _ = main_window.set_decorations(false);
