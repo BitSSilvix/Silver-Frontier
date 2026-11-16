@@ -29,8 +29,24 @@
 
     <div class="workspace">
       <!-- Боковая панель (задел под вертикальные вкладки) -->
-      <aside id="sidebar"></aside>
-      <main id="viewport-anchor"></main>
+      <aside id="sidebar">
+        <button id="btn-home" class="sidebar-btn active" title="SURFACE">❖</button>
+      </aside>
+      <main id="viewport-anchor">
+        <section id="surface-screen" class="surface-active">
+          <div class="surface-hero">
+            <span class="surface-badge">ASO ENGINE v0.15</span>
+            <h2 id="surface-clock" class="surface-clock">00:00</h2>
+            <p class="surface-greeting">Greetings to Frontier!</p>
+          </div>
+
+          <div class="surface-search-box">
+            <input type="text" id="surface-input" placeholder="Поиск..." autocomplete="off" />
+            <button id="surface-btn-go">GO</button>
+          </div>
+
+        </section>
+      </main>
     </div>
   </div>
 </body>
