@@ -162,11 +162,11 @@ body {
   align-items: center;
   color: #FFFFFF;
   font: 'Panchang', sans-serif;
-
+  margin: 0 auto;
 }
 
-#viewport-anchor {
+/* #viewport-anchor {
   flex: 1;
   height: 100%;
-  background-color: #121212; /* Графитовый фон якоря (будет скрыт сайтом) */
-}
+  background-color: #121212; /* Графитовый фон якоря (будет скрыт сайтом) 
+} */
