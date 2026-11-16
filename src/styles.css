@@ -158,6 +158,13 @@ body {
   padding-top: 10px;
 }
 
+.surface-hero {
+  align-items: center;
+  color: #FFFFFF;
+  font: 'Panchang', sans-serif;
+
+}
+
 #viewport-anchor {
   flex: 1;
   height: 100%;
